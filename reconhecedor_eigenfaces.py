@@ -5,7 +5,7 @@ import cv2
 
 detectorFace = cv2.CascadeClassifier('classifiers/haarcascade-frontalface-default.xml')
 reconhecedor = cv2.face.EigenFaceRecognizer_create()
-reconhecedor.read('classificadorEigein.yml')
+reconhecedor.read('classifications/classificadorEigein.yml')
 larrgura, altura = 220, 220
 font = cv2.FONT_HERSHEY_COMPLEX_SMALL
 camera = cv2.VideoCapture(0)

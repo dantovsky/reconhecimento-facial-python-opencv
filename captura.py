@@ -1,5 +1,6 @@
 import cv2
 import numpy as np
+import os
 
 """
 Tabalho 3 - Parte Bônus
@@ -16,6 +17,10 @@ id = input('Digite seu identificador: ')
 largura, altura = 220, 220  # size of samples
 print('Capturando as faces (25 amostras) ...')
 # Message to
+
+# Create folder "photos" if note exists
+if not os.path.exists('photos'):
+    os.mkdir('photos')
 
 while (True):
     conectado, imagem = camera.read()  # reading the webcam

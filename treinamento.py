@@ -21,7 +21,7 @@ def getImagemComid():
         imagemFace = cv2.cvtColor(cv2.imread(caminhoImagem), cv2.COLOR_BGR2GRAY)
 
         # Get ids de todas as imagens
-        print('tipo ::', type(os.path.split(caminhoImagem)[-1].split('.')[1]))
+        # TODO :: introduzir o nome da pessoa no script de captura, e extrair aqui o nome para adicionar em um novo array.
         id = int(os.path.split(caminhoImagem)[-1].split('.')[1])  # erro ao fazer cast para int
         # print(id)
         ids.append(id)  # add ID na lista de IDs
@@ -39,15 +39,19 @@ ids, faces = getImagemComid()
 
 print('Treinando')
 
+folder_classifications = 'classifications'
+if not os.path.exists(folder_classifications):
+    os.mkdir(folder_classifications)
+
 # O método train() faz o treinamento (lê todas as imagens e realiza o aprendizado), vai executar todos
 # os processos do algoritmo Eigenface
 eigenface.train(faces, ids)  # Aprendizagem supervisionada, onde se pada as imagens e o ID respetivo
-eigenface.write('classificadorEigein.yml')  # grava o treinamento em ficheiro
+eigenface.write(folder_classifications + '/classificadorEigein.yml')  # grava o treinamento em ficheiro
 
 fisherface.train(faces, ids)
-fisherface.write('classificadorFisher.yml')
+fisherface.write(folder_classifications + '/classificadorFisher.yml')
 
-lbph.train(faces, ids) 
-lbph.write('classificadorLBPH')
+lbph.train(faces, ids)
+lbph.write(folder_classifications + '/classificadorLBPH.yml')
 
 print('Treinamento realizado')
