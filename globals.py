@@ -15,3 +15,32 @@ def get_nome(id_procurado):
             return data['pessoas'][id]
     # print('Este nome não consta na BD.')
     return 'Desconhecido'
+
+# Cores para o print
+colors = {
+    "OKBLUE": '\033[94m',
+    "OKGREEN": '\033[92m',
+    "WARNING": '\033[93m',
+    "FAIL": '\033[91m',
+    "ENDC": '\033[0m',
+    "BOLD": '\033[1m',
+}
+
+# --------------------------------------------------------------------------------------------------------
+# Help links
+# --------------------------------------------------------------------------------------------------------
+
+# Working With JSON Data in Python
+# https://realpython.com/python-json/
+
+# How to print colored text in terminal in Python?
+# https://stackoverflow.com/questions/287871/how-to-print-colored-text-in-terminal-in-python
+
+# CV2: “[ WARN:0] terminating async callback” when attempting to take a picture
+# https://stackoverflow.com/questions/53888878/cv2-warn0-terminating-async-callback-when-attempting-to-take-a-picture
+
+# How to clear the interpreter console?
+# https://stackoverflow.com/questions/517970/how-to-clear-the-interpreter-console
+
+# Quick and easy file dialog in Python?
+# https://stackoverflow.com/questions/9319317/quick-and-easy-file-dialog-in-python

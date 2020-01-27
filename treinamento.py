@@ -2,6 +2,10 @@ import cv2
 import os
 import numpy as np
 
+# --------------------------------------------------------------------------------------------------------
+# Este script realiza o treinamento das imagens anteriormente capturadas pela webcam
+# --------------------------------------------------------------------------------------------------------
+
 # Classificadores (3 algoritmos diferentes)
 eigenface = cv2.face.EigenFaceRecognizer_create(num_components=50, threshold=0)
 fisherface = cv2.face.FisherFaceRecognizer_create()
@@ -37,7 +41,7 @@ ids, faces = getImagemComid()
 # print(ids)
 # print(faces)
 
-print('Treinando')
+print('Iniciando o treinando das imagens...')
 
 folder_classifications = 'classifications'
 if not os.path.exists(folder_classifications):

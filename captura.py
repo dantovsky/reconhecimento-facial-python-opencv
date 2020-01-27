@@ -2,20 +2,30 @@ import cv2
 import numpy as np
 import os
 import json
+import globals
 
-"""
-Tabalho 3 - Parte Bônus
-Professor: Armando Pinho
-Alunos: Borys Chystov, Dante Marinho e Francisco Santos
-"""
+# ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
+# Teoria Algoritmica da Informação (2019/2020)
+# Tabalho 3 - Parte Bônus (Reconhecimento Facial)
+# Professor: Armando Pinho
+# Alunos: Borys Chystov, Dante Marinho e Francisco Santos
+#
+# Developed with Python 3.7.4
+# ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
+
+# --------------------------------------------------------------------------------------------------------
+# Este script capturas imagens a partir de uma web cam
+# --------------------------------------------------------------------------------------------------------
 
 classificador = cv2.CascadeClassifier("classifiers/haarcascade-frontalface-default.xml")
 classificadorOlho = cv2.CascadeClassifier("classifiers/haarcascade-eye.xml")
 camera = cv2.VideoCapture(0)  # 0 is the number of the first cam (of computer)
 amostra = 1  # number of photos taken when press a certain key
 numeroAmostras = 25
-# id = input('Digite seu identificador: ')
-nome = input('Digite seu nome: ')
+
+# Input para receber o nome da pessoa
+nome = input(f'{globals.colors["WARNING"]}Digite seu nome: {globals.colors["ENDC"]}')
+
 largura, altura = 220, 220  # size of samples
 print('Capturando as faces (25 amostras) ...')
 
@@ -27,7 +37,6 @@ with open('nomes.json', 'r') as nomes:
     id += 1
     data['idAtual'] += 1
     data['pessoas'][id] = nome
-
 
 # Create folder "photos" if note exists
 if not os.path.exists('photos'):
