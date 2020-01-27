@@ -1,4 +1,5 @@
 import cv2
+import globals
 
 # Eigenfaces
 
@@ -28,11 +29,8 @@ while (True):
 
         # Code que vai fazer o reconhecimento facial
         id, confianca = reconhecedor.predict(imagemFace)
-        nome = ''
-        if id == 1:  # Implementar o Nome da pessoa junto do
-            nome = 'Dante'
-        elif id == 2:
-            nome = 'Leonardo'
+        nome = globals.get_nome(id)
+
         cv2.putText(imagem, nome, (x, y + (a + 30)), font, 2, (0, 0, 255))  # Params: imagem, posicionamento do texto, fonte a usar, tamanho da fonte, cor da fonte
         cv2.putText(imagem, str(confianca), (x, y + (a + 50)), font, 1, (0, 0, 255))  # Params: imagem, posicionamento do texto, fonte a usar, tamanho da fonte, cor da fonte
         # cv2.putText(imagem, str(id), (x, y + (a + 30)), font, 2, (0, 0, 255))  # Params: imagem, posicionamento do texto, fonte a usar, tamanho da fonte, cor da fonte

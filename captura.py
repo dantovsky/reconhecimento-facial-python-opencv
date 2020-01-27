@@ -1,6 +1,7 @@
 import cv2
 import numpy as np
 import os
+import json
 
 """
 Tabalho 3 - Parte Bônus
@@ -13,10 +14,20 @@ classificadorOlho = cv2.CascadeClassifier("classifiers/haarcascade-eye.xml")
 camera = cv2.VideoCapture(0)  # 0 is the number of the first cam (of computer)
 amostra = 1  # number of photos taken when press a certain key
 numeroAmostras = 25
-id = input('Digite seu identificador: ')
+# id = input('Digite seu identificador: ')
+nome = input('Digite seu nome: ')
 largura, altura = 220, 220  # size of samples
 print('Capturando as faces (25 amostras) ...')
-# Message to
+
+# Gera novo ID para pessoa atual
+id = 0
+with open('nomes.json', 'r') as nomes:
+    data = json.load(nomes)
+    id = data['idAtual']
+    id += 1
+    data['idAtual'] += 1
+    data['pessoas'][id] = nome
+
 
 # Create folder "photos" if note exists
 if not os.path.exists('photos'):
@@ -67,6 +78,9 @@ while (True):
                     print("[foto " + str(amostra) + " capturada com sucesso]")
                     amostra += 1
 
+    # Guarda nova pessoa em nomes.JSON
+    with open('nomes.json', 'w') as nomes_to_save:
+        json.dump(data, nomes_to_save, indent=4)
 
     # Show them webcam image
     cv2.imshow("Face", imagem)
