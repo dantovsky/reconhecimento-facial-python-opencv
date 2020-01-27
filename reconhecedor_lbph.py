@@ -1,13 +1,13 @@
 import cv2
 
-# Eigenfaces
+# LBPH
 
 # Ideia geral: 1º faz a detecção da face para depois fazer o reconhecimento
 # Captura a imagem que está atualmente na webcam e classifica em uma das classes feita no treinamento anteriormente
 
 detectorFace = cv2.CascadeClassifier('classifiers/haarcascade-frontalface-default.xml')
-reconhecedor = cv2.face.EigenFaceRecognizer_create()
-reconhecedor.read('classifications/classificadorEigein.yml')
+reconhecedor = cv2.face.LBPHFaceRecognizer_create()
+reconhecedor.read('classifications/classificadorLBPH.yml')
 larrgura, altura = 220, 220
 font = cv2.FONT_HERSHEY_COMPLEX_SMALL
 camera = cv2.VideoCapture(0)
