@@ -5,7 +5,7 @@ import numpy as np
 # Classificadores (3 algoritmos diferentes)
 eigenface = cv2.face.EigenFaceRecognizer_create(num_components=50, threshold=0)
 fisherface = cv2.face.FisherFaceRecognizer_create()
-lbph = cv2.face.LBPHFaceRecognizer_create()
+lbph = cv2.face.LBPHFaceRecognizer_create()  # Exemplo de parametros: 2, 2, 7, 7, 50
 
 # Método responsável por percorrer o banco de imagens de treinamento, e retorna os respetivos IDs de cada pessoa e as
 # respetivas imagens. Exemplo: { pessoa_1: [img1, im2, img3] }
