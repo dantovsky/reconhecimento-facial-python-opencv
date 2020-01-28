@@ -31,12 +31,26 @@ def init_capture():
 
     # Gera novo ID para pessoa atual
     id = 0
-    with open('nomes.json', 'r') as nomes:
-        data = json.load(nomes)
-        id = data['idAtual']
-        id += 1
-        data['idAtual'] += 1
-        data['pessoas'][id] = nome
+    if os.path.exists(globals.names_file_initial_path):  # Se este file existe é porque ja foi capturado imagem ao menos uma vez
+        with open('nomes.json', 'r') as nomes:
+            data = json.load(nomes)
+            id = data['idAtual']
+            id += 1
+            data['idAtual'] += 1
+            data['pessoas'][id] = nome
+    else:
+        with open('nomes.json', 'w') as initial_structure:
+
+            # Build the initial structure
+            data = globals.names_file_initial
+            print('Estrutura inicial:\n\n', data)
+
+            # Adding the first person
+            id = data['idAtual']
+            id += 1
+            data['idAtual'] += 1
+            data['pessoas'][id] = nome
+            json.dump(data, initial_structure, indent=4)
 
     # Create folder "photos" if note exists
     if not os.path.exists('photos'):
@@ -87,10 +101,6 @@ def init_capture():
                         print("[foto " + str(amostra) + " capturada com sucesso]")
                         amostra += 1
 
-        # Guarda nova pessoa em nomes.JSON
-        with open('nomes.json', 'w') as nomes_to_save:
-            json.dump(data, nomes_to_save, indent=4)
-
         # Show them webcam image
         cv2.imshow("Face", imagem)
         cv2.waitKey(1)  # "wainting for a key" (uncomment if running with problems)
@@ -98,6 +108,10 @@ def init_capture():
         # Stop capturing from webcam when taken 25 samples
         if (amostra >= numeroAmostras + 1):
             break
+
+    # Guarda nova pessoa em nomes.JSON
+    with open('nomes.json', 'w') as nomes_to_save:
+        json.dump(data, nomes_to_save, indent=4)
 
     print("Amostras da face capturadas com sucesso.")
     camera.release()  # flush memory

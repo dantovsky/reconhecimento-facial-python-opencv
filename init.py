@@ -1,5 +1,6 @@
 import os
 import captura
+import treinamento
 import reconhecedor
 # import reconhecer_uma_imagem
 import globals
@@ -47,7 +48,7 @@ while option is not "0":
         captura.init_capture()
     elif option == '2':
         " Iniciar treinamento das imagens"
-        import treinamento
+        treinamento.getImagemComid()
     elif option == '3':
         # Reconhecimento facial pela webcam (Classificador Eigenfaces)
         reconhecedor.reconhecer_faces('Eigenfaces')

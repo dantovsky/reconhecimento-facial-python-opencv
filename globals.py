@@ -1,13 +1,16 @@
 import json
 
-# Lê o ficheiro JSON com os IDs e nomes das pessoas
-with open('nomes.json', 'r') as nomes:
-    data = json.load(nomes)
+# Lê o ficheiro JSON com os IDs e nomes das pessoas e o contador de IDs
+def read_names_file():
+    with open('nomes.json', 'r') as nomes:
+        data = json.load(nomes)
+        return data
 
 # print('Nomes:', data['pessoas'])
 
 # Retorna o nome do ID procurado
 def get_nome(id_procurado):
+    data = read_names_file()
     for id in data['pessoas']:
         if id == str(id_procurado):
             # print('Nome da pessoa:', data['pessoas'][id])  # pessoas[id] é o nome da pessoa
@@ -24,6 +27,16 @@ colors = {
     "ENDC": '\033[0m',
     "BOLD": '\033[1m',
 }
+
+# Estrutura inicial para guardar os nomes em formato JSON
+names_file_initial = {
+    "pessoas": {
+        "0": "Desconhecido"
+    },
+    "idAtual": 0
+}
+
+names_file_initial_path = 'nomes.json'
 
 # --------------------------------------------------------------------------------------------------------
 # Help links

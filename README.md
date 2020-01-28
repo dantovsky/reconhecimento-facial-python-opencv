@@ -32,17 +32,6 @@ Developed with Python 3.7.4
 
 ## Instruções de execução do programa
 
-O ficheiro nomes.json deverá ter inicialmente o seguinte conteúdo em formato JSON:
-
-```
-{
-    "pessoas": {
-        "0": "Desconhecido"
-    },
-    "idAtual": 0
-}
-```
-
 - 1 - Rodar o script init.py :: este irá fornecer um menu.
     
     ```python3 init.py```
@@ -52,6 +41,17 @@ O ficheiro nomes.json deverá ter inicialmente o seguinte conteúdo em formato J
     (!) É necessário adicionar pelo menos duas pessoas ao banco de imagens (caso contrário poderá ocasionar um erro ao executar o ficheiro de treinamento)
 - 2 - Rodar a opção (2) para iniciar o treinamento para que sejam classificadas as imagens da pasta de imagem.
 - 3 - Rodar uma das opções de reconhecimento facial pela webcam ou a opção de reconhecimento a partir de uma imagem.
+
+Após a primeira execução do programa, será criado autometicamente um ficheiro "nomes.json" com a seguinte estrutura em formato JSON:
+
+```
+{
+    "pessoas": {
+        "0": "Desconhecido"
+    },
+    "idAtual": 0
+}
+```
 
 ## Resolução de problemas (ambiente Windows)
 
