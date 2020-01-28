@@ -9,7 +9,7 @@ import numpy as np
 # Classificadores (3 algoritmos diferentes)
 eigenface = cv2.face.EigenFaceRecognizer_create(num_components=50, threshold=0)
 fisherface = cv2.face.FisherFaceRecognizer_create()
-lbph = cv2.face.LBPHFaceRecognizer_create(2, 2, 7, 7, 50)  # Exemplo de parametros: 2, 2, 7, 7, 50
+lbph = cv2.face.LBPHFaceRecognizer_create()  # Exemplo de parametros: 2, 2, 7, 7, 50
 
 # Método responsável por percorrer o banco de imagens de treinamento, e retorna os respetivos IDs de cada pessoa e as
 # respetivas imagens. Exemplo: { pessoa_1: [img1, im2, img3] }
@@ -29,7 +29,7 @@ def getImagemComid():
         ids.append(id)  # add ID na lista de IDs
         faces.append(imagemFace)  # add face na lista de faces
 
-        # Pega a imagem e converte para escala de cinza
+        # Get image and convert to gray scale
         # Testing: existe todas as imagens da pasta de imagens
         # cv2.imshow('Face', imagemFace)
         # cv2.waitKey(10)
@@ -54,4 +54,4 @@ fisherface.write(folder_classifications + '/classificadorFisher.yml')
 lbph.train(faces, ids)
 lbph.write(folder_classifications + '/classificadorLBPH.yml')
 
-print('Treinamento realizado')
+print('Treinamento realizado!')

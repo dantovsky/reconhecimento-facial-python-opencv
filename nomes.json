@@ -1,15 +1,6 @@
 {
     "pessoas": {
-        "0": "Desconhecido",
-        "1": "Dante Marinho",
-        "5": "Rita Maria",
-        "6": "Leo",
-        "7": "Marinho",
-        "8": "Amoreco",
-        "9": "Oie",
-        "10": "Mega feliz!",
-        "11": "Mega feliz!",
-        "12": "Triste..."
+        "0": "Desconhecido"
     },
-    "idAtual": 12
+    "idAtual": 0
 }

@@ -43,3 +43,6 @@ colors = {
 
 # Quick and easy file dialog in Python?
 # https://stackoverflow.com/questions/9319317/quick-and-easy-file-dialog-in-python
+
+# Python tkinter askopenfilename not responding
+# https://stackoverflow.com/questions/51662441/python-tkinter-askopenfilename-not-responding

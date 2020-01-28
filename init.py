@@ -1,5 +1,7 @@
 import os
+import captura
 import reconhecedor
+import reconhecer_uma_imagem
 import globals
 
 # ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
@@ -34,54 +36,28 @@ while option is not "0":
     print('3 - Reconhecimento facial pela webcam (Classificador Eigenfaces)')
     print('4 - Reconhecimento facial pela webcam (Classificador Fisherface)')
     print('5 - Reconhecimento facial pela webcam (Classificador LBPH)')
-    print('6 - (i) About')
+    print('6 - Reconhecimento facial a partir de ficheiro de imagem (Classificador LBPH)')
+    print('7 - (i) About')
     print(f'{globals.colors["FAIL"]}0 - SAIR')
     option = input(f'{globals.colors["WARNING"]}\nOpção: ')
     print(f'{globals.colors["ENDC"]}')
 
     if option == '1':
         # Capturar imagens pela web cam
-        import captura
-    if option == '2':
+        captura.init_capture()
+    elif option == '2':
         " Iniciar treinamento das imagens"
         import treinamento
-    if option == '3':
+    elif option == '3':
         # Reconhecimento facial pela webcam (Classificador Eigenfaces)
         reconhecedor.reconhecer_faces('Eigenfaces')
-    if option == '4':
+    elif option == '4':
         # Reconhecimento facial pela webcam (Classificador Fisherface)
         reconhecedor.reconhecer_faces('Fisherfaces')
-    if option == '5':
+    elif option == '5':
         # Reconhecimento facial pela webcam (Classificador LBPH)
         reconhecedor.reconhecer_faces('LBPH')
-    if option == '6':
+    elif option == '6':
+        reconhecer_uma_imagem.detect_face_from_image()
+    elif option == '7':
         about()
-
-
-
-
-
-
-
-
-
-
-
-'''    if option == '1':
-        # Capturar imagens pela web cam
-        import captura
-    if option == '2':
-        " Iniciar treinamento das imagens"
-        import treinamento
-    if option == '3':
-        # Reconhecimento facial pela webcam (Classificador Eigenfaces)
-        import reconhecedor_eigenfaces
-    if option == '4':
-        # Reconhecimento facial pela webcam (Classificador Fisherface)
-        import reconhecedor_eigenfaces
-    if option == '5':
-        # Reconhecimento facial pela webcam (Classificador LBPH)
-        import reconhecedor_eigenfaces
-    if option == '6':
-        about()
-        '''

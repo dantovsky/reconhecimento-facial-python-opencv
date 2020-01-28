@@ -35,12 +35,12 @@ def reconhecer_faces(classificador):
         cv2.putText(imagem, 'Press "q" to exit.', (larrgura, altura + (altura + 30)), cv2.FONT_HERSHEY_PLAIN, 1, (0, 255, 0))
 
         for (x, y, l, a) in facesDetectadas:
-            imagemFace = cv2.resize(imagemCinza[y:y + a, x:x + l], (larrgura, altura))  # var para obter a imagem convertida para o tamanho 220x220
+            imagemFace = cv2.resize(imagemCinza[y:y + a, x:x + l], (larrgura, altura))  # var to get the converted image to size 220x220
 
-            # Desenhar o retangulo em volta da face
+            # Draw the rectangle around the face
             cv2.rectangle(imagem, (x, y), (x + l, y + a), (0, 0, 255), 2)
 
-            # Codigo que vai fazer o desenho do quadrado da face da pessoa reconhecida
+            # Code to do the square draw in recognized face person
             id, confianca = reconhecedor.predict(imagemFace)
             nome = globals.get_nome(id)
 
