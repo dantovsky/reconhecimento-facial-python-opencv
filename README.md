@@ -43,7 +43,8 @@ O ficheiro nomes.json deverá ter inicialmente o seguinte conteúdo em formato J
 }
 ```
 
-- 1 - Rodar o script init.py :: este irá fornecer um menu
+- 1 - Rodar o script init.py :: este irá fornecer um menu.
+    ```python3 init.py```
 - 2 - Escolher a opção (1) para capturar imagens pela webcam, será pedido para inserir o noma da pessoa, e em seguida capture 25 fotos (teclar "q" para uma captura).
     
     (!) É necessário adicionar pelo menos duas pessoas ao banco de imagens (caso contrário poderá ocasionar um erro ao executar o ficheiro de treinamento)
