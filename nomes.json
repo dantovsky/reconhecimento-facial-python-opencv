@@ -1,6 +1,8 @@
 {
     "pessoas": {
-        "0": "Desconhecido"
+        "0": "Desconhecido",
+        "3": "Leonardo",
+        "4": "Dante"
     },
-    "idAtual": 0
+    "idAtual": 4
 }

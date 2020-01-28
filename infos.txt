@@ -87,7 +87,7 @@ Requerimentos
 
     Outra coisa que da pra tentar é configurar o "path" nas variáveis de ambiente do Windows 
     (painel de controle, sistema, configurações avançadas), edita a variável path e coloca o 
-    caminho de instalação do OpenCV. Dê uma olhada nesse vídeo
+    caminho de instalação do OpenCV. Mais infos nesse vídeo
     https://www.youtube.com/watch?v=8tjMiImv-Kk
 
 ## Programa de teste (testar se o opencv está corretamente instalado)

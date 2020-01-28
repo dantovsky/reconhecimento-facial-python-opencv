@@ -30,6 +30,8 @@ def detect_face_from_image():
     # Obtem uma imagem a partir da caixa de diálogo
     caminhoImagem = filedialog.askopenfilename()
 
+    # cv2.resize(caminhoImagem, caminhoImagem.size())
+
     imagemFace = Image.open(caminhoImagem).convert('L')
     imagemFaceNP = np.array(imagemFace, 'uint8')
     facesDetectadas = detectorFace.detectMultiScale(imagemFaceNP)
@@ -55,5 +57,5 @@ def detect_face_from_image():
             cv2.putText(imagemFaceNP, str(confianca), (x, y + (a + 50)), font, 1, (0, 255, 0))  # Params: imagem, posicionamento do texto, fonte a usar, tamanho da fonte, cor da fonte
 
             cv2.imshow("Face", imagemFaceNP)
-        cv2.waitKey(10000)
+        cv2.waitKey(8000)
         cv2.destroyAllWindows()

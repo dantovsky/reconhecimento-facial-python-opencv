@@ -47,7 +47,7 @@ def reconhecer_faces(classificador):
             cv2.putText(imagem, nome, (x, y + (a + 30)), font, 2, (0, 0, 255))  # Params: imagem, posicionamento do texto, fonte a usar, tamanho da fonte, cor da fonte
             cv2.putText(imagem, str(confianca), (x, y + (a + 50)), font, 1, (0, 0, 255))  # Params: imagem, posicionamento do texto, fonte a usar, tamanho da fonte, cor da fonte
 
-        cv2.imshow('Face', imagem)
+        cv2.imshow('Face Recognition', imagem)
         if cv2.waitKey(1) == ord('q'):  # Break the cicle when click "q" key
             break
 
