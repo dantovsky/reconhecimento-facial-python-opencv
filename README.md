@@ -34,14 +34,14 @@ Developed with Python 3.7.4
 
 O ficheiro nomes.json deverá ter inicialmente o seguinte conteúdo em formato JSON:
 
-'''
+```
 {
     "pessoas": {
         "0": "Desconhecido"
     },
     "idAtual": 0
 }
-'''
+```
 
 - 1 - Rodar o script init.py :: este irá fornecer um menu
 - 2 - Escolher a opção (1) para capturar imagens pela webcam, será pedido para inserir o noma da pessoa, e em seguida capture 25 fotos (teclar "q" para uma captura).
