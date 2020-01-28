@@ -46,3 +46,6 @@ colors = {
 
 # Python tkinter askopenfilename not responding
 # https://stackoverflow.com/questions/51662441/python-tkinter-askopenfilename-not-responding
+
+# AttributeError: module 'cv2.cv2' has no attribute 'createLBPHFaceRecognizer'
+# https://stackoverflow.com/questions/44633378/attributeerror-module-cv2-cv2-has-no-attribute-createlbphfacerecognizer
