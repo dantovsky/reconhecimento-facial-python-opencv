@@ -2,7 +2,7 @@ import os
 import captura
 import treinamento
 import reconhecedor
-# import reconhecer_uma_imagem
+import reconhecer_uma_imagem
 import globals
 
 # ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
@@ -59,6 +59,6 @@ while option is not "0":
         # Reconhecimento facial pela webcam (Classificador LBPH)
         reconhecedor.reconhecer_faces('LBPH')
     elif option == '6':
-        print()
+        reconhecer_uma_imagem.detect_face_from_image()
     elif option == '7':
         about()
