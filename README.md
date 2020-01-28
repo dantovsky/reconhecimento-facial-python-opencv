@@ -96,6 +96,34 @@ tanto as instruções do curso quando a que foi feita posteriormente.
     caminho de instalação do OpenCV. Dê uma olhada nesse vídeo
     https://www.youtube.com/watch?v=8tjMiImv-Kk
 
+## Possíveis erros ao rodar o programa
+
+### Erro 1
+```
+Traceback (most recent call last):
+  File "init.py", line 50, in <module>
+    import treinamento
+  File "/home/dantiii/Desktop/TAI_Lab3/reconhecimento-facial-python-opencv/treinamento.py", line 10, in <module>
+    eigenface = cv2.face.EigenFaceRecognizer_create(num_components=50, threshold=0)
+AttributeError: module 'cv2.cv2' has no attribute 'face'
+```
+
+Poderá tentar umas destas soluções, mas apenas consegui resolver ao instalar o pacote do OpenCV-contrib a partir do instalador de pacotes do Pycharm:
+
+https://stackoverflow.com/questions/44633378/attributeerror-module-cv2-cv2-has-no-attribute-createlbphfacerecognizer
+
+### Erro 2
+
+```
+"SyntaxError: Non-ASCII character '\xc3' in ... 
+```
+
+Precisa iniciar o programa com o Python3:
+
+```
+python3 init.py
+```
+
 ## Programa de teste (testar se o opencv está corretamente instalado)
 
 Criar um script com o seguinte conteúdo (deverá aparecer um número de versão e em seguida
