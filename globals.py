@@ -4,7 +4,6 @@ import json
 with open('nomes.json', 'r') as nomes:
     data = json.load(nomes)
 
-
 # print('Nomes:', data['pessoas'])
 
 # Retorna o nome do ID procurado

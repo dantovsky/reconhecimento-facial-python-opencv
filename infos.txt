@@ -17,7 +17,8 @@ Visão geral
 - contar pessoas num ambiente
 - alarmes
 - controle de tráfego em rodovias
-- obter o tamanho de um objetodeteção de sorrisos em cam/ajuste de foco
+- obter o tamanho de um objeto
+- deteção de sorrisos em cam/ajuste de foco
 
 => Reconhecimento
 - desbloqueio do celultar
@@ -158,7 +159,7 @@ Após a obtenção de dois arrays contendo respetivamente as faces e os IDs, ref
 
 Captura partes específicas de várias imagens e depois faz um somatório e tira a média, considerando como sendo a imagem da pessoa.
 Eigenvextor - "vetor próprio" :: uma imagem é uma matrix de pixels com valores RGB e o conceito de eigen vector está relacionado a multiplicação de matrizes de vetores.
-Eigein value representa um valor como um número escalar em Álgeebra.
+Eigein value representa um valor como um número escalar em Álgebra.
 
 PCA (Principal Component Analysis) :: técnica de Machine Learning para trabalhar com a redução de dimensionalidade dos dados, ou conhecido também como "a seleção dos atributos". Com isso, permite remover informação inútil da imagem.
 
@@ -174,10 +175,10 @@ Pontos importantes:
 - Encontar vetores que melhor representam a distribuição das faces.
 - Eigenvector projeta as imagens de faces no espaço de faces (conjunto de todas as imagens (eigeinfaces) de todas as pessoas).
 
-Depois de estar treinado (explicação acima), passa para a faze de classificação.
+Depois de estar treinado (explicação acima), passa para a fase de classificação.
 O Eigenface faz as etapas:
 - Projeta a imagem de teste no espaço de faces.
-- Extrai comnotentes eigenfaces da imagem.
+- Extrai componentes eigenfaces da imagem.
 - Calcula a distância entre a nova face e as faces de treinamento (knn).
 - Busca nas imagens de treinamento pela mais semelhante.
 
@@ -201,15 +202,15 @@ Mais sobre o Eigenfaces (na aula 17 sobre o Fisherfaces)
 - LDA não está interessado na maior variação, mas em maximizar a separação entre as classes
 - Fisherfaces podem ser calculados usando o PCA ou regularização
 - Parâmetros OpenCV
--- num_components
--- threshold
+-- num_components :: num de componentes principais (a documentação indica que 50 é quase sempre suficiente), são a assinatura do rosto
+-- threshold :: limite de confiança / distância de uma face à outra (vizinho mais próximo - KNN)
 
 
 ## LBPH
 - Dada uma matriz de uma imagem, para cada pixel, analisa os valores a volta de cada pixel para classificar em 0 ou 1 e ao final gera um número binário, que daí é obtido o seu decimal respectivo
 - O número decimal é usado para treinar o sistema, gerando um histograma dos valores (um histograma para cada face)
 - Esse algo. é responsável por encontrar a estrutura "local" da imagem por meio dos vizinhos
-- Gera o histograma para a nova imagem e compara com os hostogramas da base de dados
+- Gera o histograma para a nova imagem e compara com os histogramas da base de dados
 
 Parâmetros do LBPH:
 
@@ -217,7 +218,7 @@ radius => raio de abrangência para realizar os cálculos na imagem
 - raio maior aumenta a abrangência mas pode perder bordas finas (pontos mais distantes)
 - quanto maior o raio mais padrões podem ser codificados, mas aumenta o esforço computacional
 
-neighbors => especificar o número de vizinhos para fazer o cálculo
+neighbors => especifica o número de vizinhos para fazer o cálculo
 - nº de pontos da amostra para construir um padrão local
 - quanto maior o nº de vizinhos maior é o esforço computacional
 
@@ -227,9 +228,9 @@ grid_x =>
 
 grid_y =>
 - nº de células na vertical
-- se a grade aumentar serão usamos menos pixels em cada histograma (mais esparços)
+- se a grade aumentar serão usados menos pixels em cada histograma (mais esparços)
 
-thresshold =>
+threshold =>
 - limite de confiança
 
 

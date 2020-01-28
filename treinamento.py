@@ -15,7 +15,6 @@ lbph = cv2.face.LBPHFaceRecognizer_create(2, 2, 7, 7, 50)  # Exemplo de parametr
 # respetivas imagens. Exemplo: { pessoa_1: [img1, im2, img3] }
 def getImagemComid():
     caminhos = [os.path.join('photos', f) for f in os.listdir('photos')]
-    # print(caminhos)
     faces = []  # guardar as faces de cada pessoa "xpto"
     ids = []  # guardar os IDs de cada pessoa "xpto"
 
@@ -27,7 +26,6 @@ def getImagemComid():
         # Get ids de todas as imagens
         # TODO :: introduzir o nome da pessoa no script de captura, e extrair aqui o nome para adicionar em um novo array.
         id = int(os.path.split(caminhoImagem)[-1].split('.')[1])  # erro ao fazer cast para int
-        # print(id)
         ids.append(id)  # add ID na lista de IDs
         faces.append(imagemFace)  # add face na lista de faces
 
@@ -38,8 +36,6 @@ def getImagemComid():
     return np.array(ids), faces  # converte a lista de ids para o tipo np.array (tipo de dado requerido para fazer o treinamento)
 
 ids, faces = getImagemComid()
-# print(ids)
-# print(faces)
 
 print('Iniciando o treinando das imagens...')
 
